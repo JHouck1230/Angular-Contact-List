@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact List</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+	<script src="main.js"></script>
+</head>
+<body ng-app='myApp' ng-controller='mainCtrl'>
+	<div class="container">
+		<div class="page-header">
+			<h1>Contact List</h1>
+		</div>
+		<input type="text" ng-model='newContact.name' placeholder="Name">
+		<input type="tel" ng-model='newContact.phone' placeholder="Phone Number">
+		<input type="email" ng-model='newContact.email' placeholder="Email">
+		<button class='btn btn-primary btn-sm' ng-click='addContact()'>Add Contact</button>
+
+		<table class='table'>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Remove</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='contact in contacts track by $index'>
+					<td>
+					<span ng-hide='contact.editing' ng-dblclick='editInfo(contact)'>{{contact.name}}</span>
+					<input ng-show='contact.editing' ng-model='contact.name' ng-blur='submitEdit(contact)' type="text" autofocus></td>
+					<td>
+					<span ng-hide='contact.editing' ng-dblclick='editInfo(contact)'>{{contact.phone}}</span>
+					<input ng-show='contact.editing' ng-model='contact.phone' ng-blur='submitEdit(contact)' type="tel">
+					</td>
+					<td>
+					<span ng-hide='contact.editing' ng-dblclick='editInfo(contact)'>{{contact.email}}</span>
+					<input ng-show='contact.editing' ng-model='contact.email' ng-blur='submitEdit(contact)' type="text"></td>
+					<td>
+						<button ng-click='removeContact(contact)' class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden='true'></span></button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+

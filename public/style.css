@@ -1,3 +1,12 @@
 span {
 	cursor: pointer;
 }
+
+.row {
+  display: flex;
+  padding-left: 15px;
+}
+
+input {
+  height: 31px;
+}

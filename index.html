@@ -16,12 +16,13 @@
 		<div class="page-header">
 			<h1>Contact List</h1>
 		</div>
-		<input type="text" ng-model='newContact.name' placeholder="Name">
-		<input type="tel" ng-model='newContact.phone' placeholder="Phone Number">
-		<input type="email" ng-model='newContact.email' placeholder="Email">
-		<button class='btn btn-primary btn-sm' ng-click='addContact()'>Add Contact</button>
-
-		<table class='table'>
+		<div class="row">
+			<input type="text" ng-model='newContact.name' placeholder="Name">
+			<input type="tel" ng-model='newContact.phone' placeholder="Phone Number">
+			<input type="email" ng-model='newContact.email' placeholder="Email">
+			<button class='btn btn-primary btn-sm' ng-click='addContact()'>Add Contact</button>
+		</div>
+		<table class='table table-hover'>
 			<thead>
 				<tr>
 					<th>Name</th>

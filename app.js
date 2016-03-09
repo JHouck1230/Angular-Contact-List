@@ -52,10 +52,7 @@ app.delete('/removecontact/:index', function(req, res) {
 		if(err) {
 			return res.status(400).send(err);
 		}
-		console.log('contacts: ', contacts);
-		console.log('index: ', index);
 		contacts.splice(index, 1);
-		console.log('contacts: ', contacts);
 		Contacts.write(contacts, function(err) {
 			if(err) {
 				return res.status(400).send(err);

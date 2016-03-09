@@ -33,7 +33,6 @@ app.controller('mainCtrl', function($scope, $http) {
 			}
 		})
 		.then(function(res) {
-			console.log('res: ', res);
 			$scope.contacts.push(contact);
 			$scope.newContact = {};
 			return;

@@ -9,4 +9,9 @@ span {
 
 input {
   height: 31px;
+  margin: 0px 3px;
+}  
+
+.btn-primary {
+	margin-left: 3px;
 }

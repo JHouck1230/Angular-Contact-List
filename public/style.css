@@ -1,7 +1,3 @@
-span {
-	cursor: pointer;
-}
-
 .row {
   display: flex;
   padding-left: 15px;
@@ -14,4 +10,8 @@ input {
 
 .btn-primary {
 	margin-left: 3px;
+}
+
+.contact {
+	cursor: pointer;
 }

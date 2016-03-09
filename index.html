@@ -32,9 +32,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat='contact in contacts track by $index'>
+				<tr class='contact' ng-repeat='contact in contacts track by $index' ng-dblclick='editInfo(contact)'>
 					<td>
-					<span ng-hide='contact.editing' ng-dblclick='editInfo(contact)'>{{contact.name}}</span>
+					<span ng-hide='contact.editing' >{{contact.name}}</span>
 					<input ng-show='contact.editing' ng-model='contact.name' ng-blur='submitEdit(contact)' type="text" autofocus></td>
 					<td>
 					<span ng-hide='contact.editing' ng-dblclick='editInfo(contact)'>{{contact.phone}}</span>
